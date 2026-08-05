@@ -61,18 +61,7 @@ in der [Processing IDE](https://processing.org/download) oeffnen.
 
 ## Ablauf
 
-```
-MindFlex-Headset -> EEG-Arduino -> serielle Schnittstelle
-                                          |
-                          +---------------+----------------+
-                          |                                |
-                 BrainGrapher (Processing)         MindFlex_BCI (Python)
-                 Live-Rohdatengraph                Validierung -> Feature-Extraktion
-                                                    -> ML-Klassifikation (Decision Tree /
-                                                       Random Forest / KNN)
-                                                    -> PyQt5-GUI mit Richtungsanzeige
-                                                    -> serielle Schnittstelle -> RC-Auto-Arduino
-```
+![MindFlex BCI Pipeline](docs/images/pipeline.svg)
 
 ## Lizenz
 
