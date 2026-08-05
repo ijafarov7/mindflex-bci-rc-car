@@ -5,6 +5,14 @@ liefert über einen Arduino Rohdaten, die in Echtzeit visualisiert, aufgezeichne
 Trainingsdaten für mehrere Machine-Learning-Modelle genutzt und schliesslich in
 Fahrbefehle für ein zweites, per Arduino gesteuertes RC-Auto umgesetzt werden.
 
+## Screenshots
+
+Live-Vorhersage inklusive EEG-Graph, Richtungsanzeige und Modell-Genauigkeit:
+
+| FORWARD | STOP |
+|---|---|
+| ![Vorhersage FORWARD](docs/images/gui-prediction-forward.png) | ![Vorhersage STOP](docs/images/gui-prediction-stop.png) |
+
 ## Projektstruktur
 
 ```
@@ -38,6 +46,10 @@ Ansteuerung des RC-Autos über eine zweite serielle Verbindung.
    LowBeta, HighBeta, LowGamma, HighGamma).
 2. **RC-Auto-Arduino**: empfängt Einzelzeichen-Befehle (`F`/`B`/`L`/`R`/`S`) über eine
    zweite serielle Verbindung und setzt sie in Motoransteuerung um.
+
+| Arduino-Boards | Arduino am Headset montiert | Elektroden-Nahaufnahme |
+|---|---|---|
+| ![Arduino-Boards](docs/images/hardware-arduinos.jpg) | ![Arduino am Headset](docs/images/hardware-headset-mounted.jpg) | ![Elektroden-Nahaufnahme](docs/images/hardware-headset-closeup.jpg) |
 
 ## Schnellstart
 
