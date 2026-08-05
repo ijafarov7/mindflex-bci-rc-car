@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Processing IDE autosave files
+*.autosave
+
+# OS
+Thumbs.db
+.DS_Store
