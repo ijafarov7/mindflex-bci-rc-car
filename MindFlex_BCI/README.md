@@ -23,7 +23,24 @@ python main.py --mode train     # interaktiver Konsolen-Trainingsmodus
 python main.py --mode retrain   # Modell einmalig aus training_data.csv neu trainieren
 ```
 
-## 3. Arduino-Anschluss
+## 3. Arduino-Bibliothek (EEG-Arduino)
+
+Auf dem EEG-Arduino muss die [Arduino Brain Library](https://github.com/kitschpatrol/Brain)
+installiert sein (liest den ThinkGear-Chip des MindFlex-Headsets aus und sendet die
+CSV-Zeilen ueber Serial, die dieses Programm erwartet). Installation in der Arduino IDE:
+
+1. ZIP von https://github.com/kitschpatrol/Brain herunterladen.
+2. Arduino IDE -> Sketch -> Bibliothek einbinden -> .ZIP-Bibliothek hinzufuegen -> die
+   heruntergeladene ZIP auswaehlen (oder manuell nach `Dokumente/Arduino/libraries`
+   entpacken).
+3. Das Beispiel-Sketch der Bibliothek (bzw. euer eigenes, darauf aufbauendes Sketch) auf
+   den EEG-Arduino hochladen.
+
+Der **RC-Auto-Arduino** ist nicht Teil dieses Projekts -- er wird als bereits
+vorhandene Hardware vorausgesetzt, die die Einzelzeichen `F`/`B`/`L`/`R`/`S` per Serial
+empfaengt und in Motoransteuerung umsetzt.
+
+## 4. Arduino-Anschluss
 
 Das Programm sucht automatisch nach einem seriellen Port, dessen Windows-Geraetename
 "Arduino" enthaelt -- in der Regel muss NICHTS manuell eingestellt werden, einfach
@@ -41,7 +58,7 @@ python main.py
 (Windows-Geraetemanager -> "Anschluesse (COM & LPT)" zeigt, welcher Port welchem
 Arduino entspricht.)
 
-## 4. Enthaltene Dateien
+## 5. Enthaltene Dateien
 
 - **`*.py`**: kompletter Programmcode
 - **`training_data.csv`**: bereits aufgezeichnete Trainingsdaten (aktuell FORWARD + STOP)
@@ -49,7 +66,7 @@ Arduino entspricht.)
   muss nicht neu trainiert werden. Wird beim Start automatisch geladen.
 - **`requirements.txt`**: benoetigte Python-Pakete
 
-## 5. Weitere Fahrbefehle trainieren
+## 6. Weitere Fahrbefehle trainieren
 
 Ueber den Button **"Training starten"** in der GUI koennen weitere Label
 (LEFT/RIGHT/BACKWARD) aufgenommen werden. Danach ueber **"Modell neu trainieren"**

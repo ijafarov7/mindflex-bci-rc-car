@@ -53,11 +53,28 @@ Ansteuerung des RC-Autos über eine zweite serielle Verbindung.
 
 ## Schnellstart
 
-Siehe [`MindFlex_BCI/README.md`](MindFlex_BCI/README.md) für die vollständige
-Setup-Anleitung (Python-Installation, Abhaengigkeiten, Start, Training).
+**Voraussetzungen:** Python 3.12, [Processing](https://processing.org/download) 3.x
+(nur fuer `BrainGrapher/`), sowie auf dem EEG-Arduino die
+[Arduino Brain Library](https://github.com/kitschpatrol/Brain) installiert (Arduino IDE
+-> Sketch -> Bibliothek einbinden -> .ZIP-Bibliothek hinzufuegen, oder manuell nach
+`Dokumente/Arduino/libraries` entpacken).
+
+```
+cd MindFlex_BCI
+pip install -r requirements.txt
+python main.py
+```
+
+Ausfuehrliche Anleitung (inkl. COM-Port-Konfiguration, Trainingsmodus,
+Konsolen-Modi): [`MindFlex_BCI/README.md`](MindFlex_BCI/README.md).
 
 Fuer die reine Signal-Visualisierung ohne ML-Pipeline: `BrainGrapher/BrainGrapher.pde`
-in der [Processing IDE](https://processing.org/download) oeffnen.
+in der Processing IDE oeffnen (benoetigt ebenfalls die Arduino Brain Library auf dem
+Arduino; ControlP5 2.2.5 liegt bereits in `BrainGrapher/code/` bei).
+
+**Hinweis:** Der Sketch fuer den RC-Auto-Arduino selbst ist nicht Teil dieses Repos --
+er wird als bereits vorhandene, unveraenderte Hardware-Komponente vorausgesetzt, die
+Einzelzeichen-Befehle (`F`/`B`/`L`/`R`/`S`) per Serial empfaengt.
 
 ## Ablauf
 
