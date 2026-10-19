@@ -1,13 +1,10 @@
-# Python
+.DS_Store
 __pycache__/
 *.pyc
-
-# Logs
+*.bak
+*.zip
+~$*
+# Persönliche EEG-Profile von Versuchspersonen
+MindFlex_BCI_Projekt/profile/
 *.log
-
-# Processing IDE autosave files
 *.autosave
-
-# OS
-Thumbs.db
-.DS_Store

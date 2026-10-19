@@ -18,7 +18,7 @@ class Monitor {
     backgroundColor = color(255);
 
     // Create GUI
-    showGraph = controlP5.addCheckBox("showGraph" + sourceChannel.name, x + 16, y + 32);
+    showGraph = controlP5.addCheckBox("showGraph" + sourceChannel.name).setPosition(x + 16, y + 32);
     showGraph.addItem("GRAPH" + sourceChannel.name, 0);
     showGraph.activate(1);
     showGraph.setColorForeground(sourceChannel.drawColor);
@@ -60,7 +60,7 @@ class Monitor {
       } 
 
       // Calculate the new position on the way to the target with easing
-      currentValue = currentValue + round(((float)(targetValue - currentValue) * .08));
+      currentValue = currentValue + round(((float)(targetValue - currentValue) * 0.08f));
 
       // Bar
       noStroke();

@@ -26,12 +26,16 @@ class Graph {
     originalX = x;    
 
     // Set up GUI controls
-    pixelSecondsSlider = controlP5.addSlider("PIXELS PER SECOND", 10, width, 50, 16, 16, 100, 10);
+    pixelSecondsSlider = controlP5.addSlider("PIXELS PER SECOND")
+      .setRange(10, width)
+      .setValue(50)
+      .setPosition(16, 16)
+      .setSize(100, 10);
     pixelSecondsSlider.setColorForeground(color(180));
+    pixelSecondsSlider.getCaptionLabel().setColor(color(0));
     pixelSecondsSlider.setColorActive(color(180));
-    pixelSecondsSlider.setColorValueLabel(color(255));
 
-    renderModeRadio = controlP5.addRadioButton("RENDER MODE", 16, 36);
+    renderModeRadio = controlP5.addRadioButton("RENDER MODE").setPosition(16, 36);
     renderModeRadio.setColorForeground(color(255));
     renderModeRadio.setColorActive(color(0));
     renderModeRadio.setColorBackground(color(180));
@@ -43,7 +47,7 @@ class Graph {
                 
     renderModeRadio.activate(0);
 
-    scaleRadio = controlP5.addRadioButton("SCALE MODE", 104, 36);
+    scaleRadio = controlP5.addRadioButton("SCALE MODE").setPosition(104, 36);
     scaleRadio.setColorForeground(color(255));
     scaleRadio.setColorActive(color(0));
     scaleRadio.setColorBackground(color(180));
@@ -54,7 +58,7 @@ class Graph {
   }
 
   void update() {
-    // Set pixels per second from GUI slider
+    // Set pixels per second from GUU slider
     pixelsPerSecond = round(pixelSecondsSlider.getValue());
 
     // Set render mode from GUI radio buttons
@@ -199,3 +203,4 @@ class Graph {
     rect(10, 10, 195, 81);
   }
 }
+
